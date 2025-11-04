@@ -38,7 +38,7 @@ abstract class NotificationService {
 }
 
 class NotificationServiceImpl implements NotificationService {
-  static const String _oneSignalAppId = '82776dd3-cb77-4c69-8d81-cac99c6499ba';
+  static const String _oneSignalAppId = 'YourAppId';
   bool _isInitialized = false;
 
   // Local notifications plugin
