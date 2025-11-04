@@ -38,7 +38,7 @@ abstract class NotificationService {
 }
 
 class NotificationServiceImpl implements NotificationService {
-  static const String _oneSignalAppId = 'YourAppID';
+  static const String _oneSignalAppId = '82776dd3-cb77-4c69-8d81-cac99c6499ba';
   bool _isInitialized = false;
 
   // Local notifications plugin
@@ -70,7 +70,18 @@ class NotificationServiceImpl implements NotificationService {
       });
 
       // Add subscription observer
-      OneSignal.User.pushSubscription.addObserver((state) {});
+      OneSignal.User.pushSubscription.addObserver((state) {
+        debugPrint(
+          'OneSignal: Subscription state changed: ${state.current.id}',
+        );
+        debugPrint('OneSignal: Opted in: ${state.current.optedIn}');
+        debugPrint('OneSignal: Token: ${state.current.token}');
+      });
+
+      // Log initial subscription state
+      final subscriptionState = OneSignal.User.pushSubscription;
+      debugPrint('OneSignal: Initial Player ID: ${subscriptionState.id}');
+      debugPrint('OneSignal: Initial Opted in: ${subscriptionState.optedIn}');
 
       // Initialize local notifications
       await _initializeLocalNotifications();

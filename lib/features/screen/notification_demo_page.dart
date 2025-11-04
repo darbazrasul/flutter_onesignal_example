@@ -358,7 +358,7 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
         trailing: Switch(
           value: _isSubscribed,
           onChanged: (_) => _toggleSubscription(),
-          activeColor: Colors.green,
+          activeThumbColor: Colors.green,
         ),
       ),
     );
