@@ -20,23 +20,23 @@ Future<void> run([
   final notificationService = NotificationServiceImpl();
   await notificationService.requestPermission();
 
-  // await notificationService.initialize();
-  // notificationService.setNotificationHandlers(
-  //   onClicked: (event) {
-  //     final data = event.notification.additionalData;
-  //     if (data != null) {
-  //       notificationService.handleNotificationNavigation(
-  //         AppRouter.router,
-  //         data,
-  //       );
-  //     }
-  //   },
-  //   onReceived: (event) {
-  //     debugPrint(
-  //       'Notification received in foreground: ${event.notification.title}',
-  //     );
-  //   },
-  // );
+  await notificationService.initialize();
+  notificationService.setNotificationHandlers(
+    onClicked: (event) {
+      final data = event.notification.additionalData;
+      if (data != null) {
+        notificationService.handleNotificationNavigation(
+          AppRouter.router,
+          data,
+        );
+      }
+    },
+    onReceived: (event) {
+      debugPrint(
+        'Notification received in foreground: ${event.notification.title}',
+      );
+    },
+  );
 
   if (isInitialized) {
     debugPrint(

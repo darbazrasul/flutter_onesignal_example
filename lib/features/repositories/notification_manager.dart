@@ -5,7 +5,6 @@ import 'package:onesignal_flutter/onesignal_flutter.dart';
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
-/// A helper class to easily manage notification setup and handling
 class NotificationManager {
   static final NotificationManager _instance = NotificationManager._internal();
   factory NotificationManager() => _instance;

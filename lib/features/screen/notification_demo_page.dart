@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_onesignal_example/features/repositories/notification_manager.dart';
 
-/// Notification Demo Page - Testing OneSignal Integration
-/// Works with your existing NotificationService and NotificationManager
 class NotificationDemoPage extends StatefulWidget {
   const NotificationDemoPage({super.key});
 
@@ -170,7 +168,7 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
         title: const Text('OneSignal Demo'),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.blueAccent,
         elevation: 0,
         actions: [
           IconButton(
@@ -220,9 +218,11 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
   }
 
   Widget _buildStatusCard() {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        color: Colors.white,
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -333,9 +333,11 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
   }
 
   Widget _buildSubscriptionCard() {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        color: Colors.white,
+      ),
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: _isSubscribed ? Colors.green : Colors.orange,
@@ -365,9 +367,11 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
   }
 
   Widget _buildTestNotificationCard() {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        color: Colors.white,
+      ),
       child: ListTile(
         leading: const CircleAvatar(
           backgroundColor: Colors.blue,
@@ -389,9 +393,11 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
   }
 
   Widget _buildTagsCard() {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        color: Colors.white,
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -442,9 +448,11 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
 
   Widget _buildNotificationsList() {
     if (_receivedNotifications.isEmpty) {
-      return Card(
-        elevation: 2,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      return Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+          color: Colors.white,
+        ),
         child: Padding(
           padding: const EdgeInsets.all(32.0),
           child: Column(
@@ -472,11 +480,11 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
 
     return Column(
       children: _receivedNotifications.map((notification) {
-        return Card(
-          elevation: 2,
+        return Container(
           margin: const EdgeInsets.only(bottom: 8),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+            color: Colors.white,
           ),
           child: ListTile(
             leading: CircleAvatar(
@@ -527,10 +535,11 @@ class _NotificationDemoPageState extends State<NotificationDemoPage>
   }
 
   Widget _buildInstructionsCard() {
-    return Card(
-      elevation: 2,
-      color: Colors.blue[50],
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.1)),
+        color: Colors.white,
+      ),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
